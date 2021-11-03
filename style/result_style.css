@@ -1,0 +1,13 @@
+*{
+    font-family: 微軟雅黑體;
+    background-color: rgb(231,233,235);
+    text-align: center;
+}
+#back{
+    font-size: 36px;
+    padding: 12px;
+    text-decoration: none;
+    border: 1px white solid;
+    border-radius: 10px;
+    color:black;
+}
