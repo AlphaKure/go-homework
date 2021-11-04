@@ -14,11 +14,11 @@
 
 超級頭痛 完全0基礎 補充一下助教沒說到(還是我沒注意到的)
 
-第一步:安裝gin
+#### 第一步:安裝gin
 
  ```go get -u github.com/gin-gonic/gin```
   
-第二步:寫個雛形的main.go
+#### 第二步:寫個雛形的main.go
  ```go
   package main
   import(
@@ -40,7 +40,7 @@
 ```
   上面main要依照你寫的做修改
   
-  如果出現`no required module provides package github.com/gin-gonic/gin: `
+  #### 如果出現`no required module provides package github.com/gin-gonic/gin: `
   
   在跟main.go同目錄的地方建個空白檔go.mod
   
@@ -54,7 +54,7 @@
   
   go.mod go.sum就完成了 我到這邊就沒有報錯了
   
-  每次Run code都會跳出一個很煩的防火牆視窗
+  #### 每次Run code都會跳出一個很煩的防火牆視窗
   
   可以利用指令打包執行檔
   ```
@@ -64,6 +64,6 @@
   不一定要取main.exe 可以自己改 這樣開啟舒服多了
   
   
-  第三步:無情的撰寫功能
+  #### 第三步:無情的撰寫功能
   
   待補
