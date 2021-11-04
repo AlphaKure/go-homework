@@ -12,6 +12,7 @@
         <ul>
             <li><a href="#Howtouse">使用方法</a></li>
             <li><a href="#search">搜尋</a></li>
+            <li><a href="#result">結果</a></li>
         </ul>
     </nav>
 
@@ -24,22 +25,45 @@
         </div>
         在底下搜尋欄打上你要找的Vtuber名稱<br>
         漢字照常，假名改成羅馬拼音。<br>
-        (Ex:夜見れな=>夜見rena)
+        (Ex:夜見れな=>夜見rena)<br>
+        目前只支援12位Vtuber
     </div>
     <div class="search">
         <div class="Title" id="search">
             搜尋<br>
         </div>
-        <form METHOD="GET" ACTION="/result">
-            <input type="text" id="search_name" placeholder="請輸入Vtuber名稱"><br>
-            <button type="submit" id="btn">搜尋</button>
-        </div>
-        </form>
+        <form METHOD="POST" ACTION="/result">
+            <input type="text" id="id_input" placeholder="請輸入Vtuber名稱" required><br>
+            <a href="#"><button type="submit" id="btn" class="btn">搜尋</button></a>
     </div>
-    <footer>
-        <hr>
-        B10917027_四資工二A_吳柏叡
-    </footer>
+    </form>
+    </div>
+    <div class="result" id="result">
+        <div class="Title">
+            結果<br>
+            {{ if .success }}
+            <div class="succsee">
+                {{ .success }}
+                {{ .name}}
+                {{ .birthday}}
+                {{ .YT}}
+                {{ .twitter}}
+                {{.i_id}}
+
+            </div>
+            {{ end }}
+            {{if .error}}
+            <div class="error">
+                {{ .error }}
+                {{.i_id}}
+            </div>
+            {{end}}
+
+        </div>
+        <footer>
+            <hr>
+            B10917027_四資工二A_吳柏叡
+        </footer>
 </body>
 
 </html>
