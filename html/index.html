@@ -12,7 +12,7 @@
         <ul>
             <li><a href="#Howtouse">使用方法</a></li>
             <li><a href="#search">搜尋</a></li>
-            <li><a href="#result">結果</a></li>
+            <li><a href="#{{.btn}}">結果</a></li>
         </ul>
     </nav>
 
@@ -24,46 +24,98 @@
             使用方法
         </div>
         在底下搜尋欄打上你要找的Vtuber名稱<br>
-        漢字照常，假名改成羅馬拼音。<br>
-        (Ex:夜見れな=>夜見rena)<br>
-        目前只支援12位Vtuber
+        將名字改成羅馬拼音(全小寫，姓名之間用底線)。<br>
+        (Ex:夜見れな=>yorumi_rena)<br>
+        目前只支援12位Vtuber，id詳見下表。<br>
+        <table border="1">
+            <tr>
+                <td>name</td>
+                <td>id</td>
+            </tr>
+            <tr>
+                <td>夜見れな</td>
+                <td>yorumi_rena</td>
+            </tr>
+            <tr>
+                <td>リゼ　ヘルエスタ</td>
+                <td>rize_heruesuta</td>
+            </tr>
+            <tr>
+                <td>天宮こころ</td>
+                <td>amamiya_kokoro</td>
+            </tr>
+            <tr>
+                <td>葉加瀨冬雪</td>
+                <td>hakase_fuyuki</td>
+            </tr>
+            <tr>
+                <td>ヌン ボラ</td>
+                <td>nun_bora</td>
+            </tr>
+            <tr>
+                <td>花芽なずな</td>
+                <td>kaga_nazuna</td>
+            </tr>
+            <tr>
+                <td>花芽すみれ</td>
+                <td>kaga_sumire</td>
+            </tr>
+            <tr>
+                <td>一ノ瀬うるは</td>
+                <td>ichinose_uruha</td>
+            </tr>
+            <tr>
+                <td>佐透直</td>
+                <td>satou_sugu</td>
+            </tr>
+            <tr>
+                <td>神楽めあ</td>
+                <td>kagura_mea</td>
+            </tr>
+            <tr>
+                <td>笹木咲</td>
+                <td>sasaki_saku</td>
+            </tr>
+            <tr>
+                <td>しぐれうい</td>
+                <td>shigureui</td>
+            </tr>
+        </table>
     </div>
     <div class="search">
         <div class="Title" id="search">
             搜尋<br>
         </div>
         <form METHOD="POST" ACTION="/result">
-            <input type="text" id="id_input" placeholder="請輸入Vtuber名稱" required><br>
-            <a href="#"><button type="submit" id="btn" class="btn">搜尋</button></a>
+            <input type="text" id="id_input" name="id_input" placeholder="請輸入Vtuber名稱" required><br>
+            <button type="submit" id="btn" class="btn">搜尋</button>
     </div>
     </form>
     </div>
     <div class="result" id="result">
         <div class="Title">
-            結果<br>
-            {{ if .success }}
-            <div class="succsee">
-                {{ .success }}
-                {{ .name}}
-                {{ .birthday}}
-                {{ .YT}}
-                {{ .twitter}}
-                {{.i_id}}
-
-            </div>
-            {{ end }}
-            {{if .error}}
-            <div class="error">
-                {{ .error }}
-                {{.i_id}}
-            </div>
-            {{end}}
-
+            {{.Title}}<br>
         </div>
-        <footer>
-            <hr>
-            B10917027_四資工二A_吳柏叡
-        </footer>
+        {{ if .success }}
+        <img src="{{.img}}" class="pic">
+        <div class="success">
+            名稱:{{ .name}}<br>
+            生日:{{ .birthday}}<br>
+            <br>
+            <a href="{{ .YT}}"><img src="style/YouTube.jpg" class="YT"></a>
+            <a href="{{ .twitter}}"><img src="style/twitter.jpg" class="twitter"></a>
+        </div>
+        {{ end }}
+        {{if .error}}
+        <div class="error">
+            {{ .error }}
+        </div>
+        {{end}}
+    </div>
+    <footer>
+        <hr>
+        B10917027_四資工二A_吳柏叡
+    </footer>
 </body>
 
 </html>

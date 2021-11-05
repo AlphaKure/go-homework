@@ -29,32 +29,34 @@ func search(c *gin.Context) {
 	if err != nil {
 		c.HTML(http.StatusBadRequest, "index.html", gin.H{
 			"error":"json error",
-
 		})
 	}
 	var data []JSONType
 	json.Unmarshal([]byte(file), &data)
 	var i int
-	check := 11
+	check := 99
 	for i = 0; i < len(data); i++ {
 		if i_id==data[i].Id {
 			check = i
 		}
 	}
-	if check == 11 {
+	if check == 99 {
 		c.HTML(http.StatusBadRequest, "index.html", gin.H{
+			"btn":"result",
+			"Title":"結果",
 			"error":"找不到資料",
-			"i_id":i_id,
 		})
 		return
 	} else {
 		c.HTML(http.StatusOK, "index.html", gin.H{
-			"success": "找到了",
+			"btn":"result",
+			"success":"finded",
+			"Title":"結果",
+			"img":"/style/pic/"+data[check].Id+".jpg",
 			"name":data[check].Name,
 			"birthday":data[check].Birthday,
 			"YT":data[check].YT,
 			"twitter":data[check].Twitter,
-			"i_id":i_id,
 		})
 		return
 	}
