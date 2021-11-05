@@ -6,6 +6,9 @@
 
 ### 11/4-main.go基本架構完成 資料庫也建立完成
 
+### 11/5-初代完成 感謝 @KoukeFoxes 的幫忙除錯
+
+
 ## 開發過程
 
 ### 1.寫好index.html 跟style.css
