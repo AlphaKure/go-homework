@@ -28,38 +28,33 @@ func search(c *gin.Context) {
 	file, err := ioutil.ReadFile("./data/data.json")
 	if err != nil {
 		c.HTML(http.StatusBadRequest, "index.html", gin.H{
-			"error":"json error",
+			"error": "json error",
 		})
 	}
 	var data []JSONType
 	json.Unmarshal([]byte(file), &data)
 	var i int
-	check := 99
 	for i = 0; i < len(data); i++ {
-		if i_id==data[i].Id {
-			check = i
+		if i_id == data[i].Id {
+			c.HTML(http.StatusOK, "index.html", gin.H{
+				"btn":      "result",
+				"success":  "finded",
+				"Title":    "結果",
+				"img":      "/style/pic/" + data[i].Id + ".jpg",
+				"name":     data[i].Name,
+				"birthday": data[i].Birthday,
+				"YT":       data[i].YT,
+				"twitter":  data[i].Twitter,
+			})
+			return
 		}
 	}
-	if check == 99 {
-		c.HTML(http.StatusBadRequest, "index.html", gin.H{
-			"btn":"result",
-			"Title":"結果",
-			"error":"找不到資料",
-		})
-		return
-	} else {
-		c.HTML(http.StatusOK, "index.html", gin.H{
-			"btn":"result",
-			"success":"finded",
-			"Title":"結果",
-			"img":"/style/pic/"+data[check].Id+".jpg",
-			"name":data[check].Name,
-			"birthday":data[check].Birthday,
-			"YT":data[check].YT,
-			"twitter":data[check].Twitter,
-		})
-		return
-	}
+	c.HTML(http.StatusBadRequest, "index.html", gin.H{
+		"btn":   "result",
+		"Title": "結果",
+		"error": "找不到資料",
+	})
+	return
 }
 
 func main() {
