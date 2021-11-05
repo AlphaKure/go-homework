@@ -33,10 +33,16 @@ nav ul{
 nav li{
     display:inline-block;
 }
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+}
 .main{
     height: 100vh;
     text-align: center;
-    margin-top: 30%;
+    margin-top: 45vh;
     font-size: 52px;
     font-weight: bolder;
 }
@@ -51,11 +57,14 @@ nav li{
     height: 100vh;
     text-align: center;
     font-size: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 #id_input{
     height: 31px;
     font-size: 26px;
-    width: 50%;
     background-color: white;
     margin: 25px;
 }

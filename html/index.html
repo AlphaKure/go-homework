@@ -12,7 +12,9 @@
         <ul>
             <li><a href="#Howtouse">使用方法</a></li>
             <li><a href="#search">搜尋</a></li>
+            {{if .btn}}
             <li><a href="#{{.btn}}">結果</a></li>
+            {{end}}
         </ul>
     </nav>
 
@@ -106,7 +108,7 @@
             <a href="{{ .YT}}"><img src="style/YouTube.jpg" class="YT"></a>
             <a href="{{ .twitter}}"><img src="style/twitter.jpg" class="twitter"></a>
         </div>
-        {{ end }}
+        {{end}}
         {{if .error}}
         <div class="error">
             {{ .error }}
