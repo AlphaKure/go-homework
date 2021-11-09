@@ -1,6 +1,6 @@
 # vtuber-searcher
 
-## 開發紀錄
+# 開發紀錄
 
 ### 11/3-index.html設計完成 
 
@@ -10,7 +10,7 @@
     
 
 
-## 開發過程
+# 開發過程
 
 ### 1.寫好index.html 跟style.css
 
@@ -18,15 +18,11 @@
 
 ### 2.golang gin架構設計
 
-超級頭痛 完全0基礎 這是我的開發步驟
-
-#### 第零步:設定環境
-
-待補
-
 #### 第一步:安裝gin
 
- ```go get -u github.com/gin-gonic/gin```
+ ```
+ go get -u github.com/gin-gonic/gin
+ ```
   
 #### 第二步:寫個雛形的main.go
  ```go
@@ -56,7 +52,9 @@
   
   然後cmd輸入
   
-  ```go mod edit -module=(Project name) ```
+  ```
+  go mod edit -module=(Project name) 
+  ```
   
   把(Project name)改成你的專案名稱
   
@@ -74,8 +72,4 @@
   不一定要取main.exe 可以自己改 這樣開啟舒服多了
   
   
-  #### 第三步:無情的撰寫功能
-  
-  ## 支援清單
-  
-  待補
+  ### 第三步:無情的撰寫功能
