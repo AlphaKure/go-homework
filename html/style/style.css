@@ -2,6 +2,9 @@
     font-family: 微軟雅黑體;
     background-color: rgb(231,233,235);
 }
+html{
+    scroll-behavior: smooth;
+}
 nav{
     font-size: 30px;
     font-weight: bolder;
@@ -26,15 +29,11 @@ nav ul{
     margin: 0;
     padding: 0;
     overflow: hidden;
-    justify-content: center;
     color:white;
     background-color: rgb(51, 51, 51);
 }
 nav li{
     display:inline-block;
-}
-html{
-    scroll-behavior: smooth;
 }
 body{
     margin: 0;
@@ -71,7 +70,6 @@ body{
 .btn{
     font-size: 36px;
     padding: 12px;
-    text-decoration: none;
     border: 1px white solid;
     border-radius: 10px;
     color:black;

@@ -11,10 +11,6 @@ func index(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.html", nil)
 }
 
-func result(c *gin.Context) {
-	c.HTML(http.StatusOK, "result.html", nil)
-}
-
 type JSONType struct {
 	Id       string `json:"id"`
 	Name     string `json:"name"`
